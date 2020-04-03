@@ -1,0 +1,13 @@
+n_atoms 4
+n_species 2
+specie_type_1 Au
+specie_nat_1 2
+specie_type_2 Pt 
+specie_nat_2 2
+geometry Pt4.xyz
+data_file  Pt4.dat
+log_file Pt4_log.xyz
+monte_carlo_steps 1000
+temperature 1
+reference_output output.out
+

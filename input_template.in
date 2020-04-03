@@ -1,0 +1,53 @@
+&CONTROL
+calculation = 'relax'
+restart_mode = 'from_scratch',
+tstress = .true.
+tprnfor = .true.
+nstep = 300
+etot_conv_thr = 1.0D-4
+forc_conv_thr = 0.001
+disk_io = 'low',
+pseudo_dir = '/home/gabrielaraujo/pseudo',
+outdir='./'
+prefix='pt'
+/
+&SYSTEM
+ibrav = 0,
+nat = <#NAT#>,
+nbnd = 288
+ntyp = <#NTYP#>
+ecutwfc = 23
+ecutrho = 230
+occupations = 'smearing',
+smearing = 'mp',
+degauss = 0.02
+nspin = 1,
+noncolin = .false.
+/
+&ELECTRONS
+diagonalization ='david',
+conv_thr = 1.0D-8,
+electron_maxstep = 200
+mixing_beta = 0.5
+mixing_mode = 'plain'
+diagonalization = 'cg'
+/
+&IONS
+ion_dynamics = 'bfgs'
+bfgs_ndim = 3,
+pot_extrapolation = 'second_order',
+wfc_extrapolation = 'second_order',
+ion_positions = 'default '
+/
+ATOMIC_SPECIES
+Pt 195.084 Pt.pbe-n-van.UPF
+ATOMIC_POSITIONS {angstrom}
+<#PARTICLE#>
+K_POINTS {automatic}
+1 1 1 0 0 0
+CELL_PARAMETERS {hexagonal}
+28.5000000000 0.0000000000 0.00000000000
+0.00000000000 28.5000000000 0.00000000000
+0.00000000000 0.0000000000 23.1000000000
+
+
